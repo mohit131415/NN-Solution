@@ -92,7 +92,7 @@ export const Cover = ({
       <motion.span
         key={String(hovered)}
         animate={{
-          scale: hovered ? 0.8 : 1,
+          scale: hovered ? 0.9 : 1,
           x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
           y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
         }}
@@ -115,7 +115,7 @@ export const Cover = ({
             repeatType: "loop",
           },
           scale: {
-            duration: 0.2,
+            duration: 10,
           },
           filter: {
             duration: 0.2,

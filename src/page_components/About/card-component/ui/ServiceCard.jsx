@@ -75,8 +75,8 @@ const ServiceCard = () => {
               containerClassName="cursor-default transition-transform duration-300 ease-in-out transform hover:scale-105 h-full"
             >
               <div className="relative !z-50 block p-0.5 bg-no-repeat bg-[length:100%_100%]">
-                <div className="relative z-2 flex flex-col min-h-[18rem] p-[2.4rem] pointer-events-none">
-                  <div className="flex items-center mb-11 relative">
+                <div className="relative z-2 flex flex-col min-h-[14rem] p-[2.2rem] pointer-events-none">
+                  <div className="flex items-center mb-6 mt-2 relative">
                     {React.createElement(item.icon, { 
                       size: 24, 
                       className: "text-primary h-8 w-8 group-hover:text-[#3db1f5]" // Icon color change on hover
@@ -85,7 +85,7 @@ const ServiceCard = () => {
                       {item.title}
                     </h5>
                   </div>
-                  <p className="body-2 text-n-3">{item.text}</p>
+                  <p className="body-2 text-n-3 text-justify">{item.text}</p>
                 </div>
 
                 {item.light && <GradientLight />}
