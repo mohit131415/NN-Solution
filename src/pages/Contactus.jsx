@@ -1,9 +1,10 @@
 import ContactForm from "../page_components/Contactus/ContactForm";
+import EmailAsk from "../page_components/components/EmailAsk";
 
 function Contactus() {
   return (
     <>
-      <ContactForm />
+      <EmailAsk />
       {/* // ## Contact
     // address
     // phone number

@@ -2,6 +2,7 @@ import { BackgroundGradient } from "./background-gradient";
 import Section from "../../../components/Section";
 import { GradientLight } from "../../../components/design/Benefits";
 import ClipPath from "../../../assets/svg/ClipPath";
+import ClipPathImg from "../../../assets/svg/ClipPathImg";
 import Heading from "../../../components/Heading";
 import Button from "../../../components/Button";
 
@@ -11,7 +12,7 @@ const ServiceCard = () => {
       id: 1,
       title: "Cloud-based ERP",
       description:
-        "Streamline your business processes with our integrated, scalable cloud ERP system.",
+        "Streamline your business processes with our integrated, scalable cloud ERP system Will change .",
       image:
         "https://nnsolutions.co.in/assets/img/portfolio/ERP/billing_software/main.jpg",
     },
@@ -19,7 +20,7 @@ const ServiceCard = () => {
       id: 2,
       title: "CRM System",
       description:
-        "Build stronger customer relationships with our advanced CRM solution.",
+        "Build stronger customer relationships with our advanced CRM solution Will change  Will change .",
       image:
         "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2024/08/marquee-crm-software.jpg?w=1024",
     },
@@ -50,7 +51,7 @@ const ServiceCard = () => {
       id: 6,
       title: "Restaurant Management Website",
       description:
-        "Showcase your menu and services with our tailored static website for restaurants.",
+        "Showcase your menu and services with our tailored static website for restaurants Will change .",
       image:
         "https://www.agilecodex.com/media/wysiwyg/agile_codex/restaurant_management/restaurant-management-sale.PNG",
     },
@@ -83,23 +84,27 @@ const ServiceCard = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
-        <Heading className="md:max-w-md lg:max-w-2xl" title="Vision" />
+        <Heading className="md:max-w-md lg:max-w-2xl font-bold" title="Our Services" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((item) => (
             <BackgroundGradient
               key={item.id}
-              className="rounded-[22px] p-4 sm:p-6 bg-white dark:bg-zinc-900 transition-transform duration-300 ease-in-out transform hover:scale-105 flex flex-col justify-between h-full group" // Added `group`
+              className="rounded-[22px] p-4 sm:p-6 bg-white dark:bg-zinc-900 transition-transform duration-300 ease-in-out transform hover:scale-105 flex flex-col justify-between h-full group"
               containerClassName="cursor-default transition-transform duration-300 ease-in-out transform hover:scale-105 h-full"
             >
               <div className="relative !z-50 block p-0.5 bg-no-repeat bg-[length:100%_100%]">
-                <div className="relative z-2 flex flex-col min-h-[23rem] p-[1.2rem] pointer-events-none">
+                <div className="relative z-2 flex flex-col min-h-[23rem] pt-[1.2rem] px-[1.2rem] pointer-events-none">
                   <div className="relative h-[200px] w-full overflow-hidden mx-auto mb-4">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="absolute top-1/2 left-1/2 h-full w-full object-cover transform -translate-x-1/2 -translate-y-1/2"
-                    />
+                    <div>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute top-1/2 left-1/2 h-full w-full object-cover transform -translate-x-1/2 -translate-y-1/2  rounded-b-2xl rounded-l-2xl"
+                        style={{ clipPath : "url(#image)" }}
+                      />
+                    </div>
+                    <ClipPathImg />
                   </div>
                   <div className="flex items-center mb-6 mt-2 relative">
                     <h5 className="text-xl font-bold group-hover:text-[#3db1f5]">
@@ -111,29 +116,15 @@ const ServiceCard = () => {
                       {item.description}
                     </p>
                   </div>
-                  <div className="flex w-full px-3 py-4 pt-10">
-                    <Button className={"w-full"}>Contact Us</Button>
-                  </div>
                 </div>
-
+                <div className="flex w-full px-3 pb-6 pt-2">
+                  <Button className={"w-full !z-40"}>Contact Us</Button>
+                </div>
                 {item.light && <GradientLight />}
-
                 <div
                   className="absolute inset-0.5 bg-n-8"
                   style={{ clipPath: "url(#benefits)" }}
-                >
-                  <div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
-                    {item.imageUrl && (
-                      <img
-                        src={item.imageUrl}
-                        width={380}
-                        height={362}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                  </div>
-                </div>
+                ></div>
                 <ClipPath />
               </div>
             </BackgroundGradient>

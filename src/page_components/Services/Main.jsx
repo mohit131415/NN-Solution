@@ -82,8 +82,7 @@ function Main() {
               key={service.id}
               image={service.image}
               title={service.title}
-              description={service.description}
-              price={service.price}
+              description={service.description} 
             />
           ))}
         </div>
