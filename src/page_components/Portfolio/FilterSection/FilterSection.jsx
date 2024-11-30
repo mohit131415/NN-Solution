@@ -12,7 +12,7 @@ export default function FilterSection({ onFilterChange }) {
   };
 
   return (
-    <div className="flex gap-3 mb-6">
+    <div className="flex gap-6 mb-28 items-center justify-center">
       {filters.map((filter) => (
         <FilterOption
           key={filter.id}

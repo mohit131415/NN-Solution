@@ -100,7 +100,7 @@ const ServiceCard = () => {
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="absolute top-1/2 left-1/2 h-full w-full object-cover transform -translate-x-1/2 -translate-y-1/2  rounded-b-2xl rounded-l-2xl"
+                        className="absolute top-1/2 left-1/2 h-full w-full object-cover transform -translate-x-1/2 -translate-y-1/2  !rounded-b-3xl "
                         style={{ clipPath : "url(#image)" }}
                       />
                     </div>
