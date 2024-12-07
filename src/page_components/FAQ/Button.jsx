@@ -1,36 +1,32 @@
-"use client"
-
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import ClipPathFaq from "../assets/svg/ClipPathFaq"
-import { BackgroundGradient } from "./background-gradient"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import ClipPathFaq from "../assets/svg/ClipPathFaq";
 
 const ExpandableButton = ({ title, children, className = "" }) => {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [isHovered, setIsHovered] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggle = () => {
-    setIsExpanded(!isExpanded)
-  }
+    setIsExpanded(!isExpanded);
+  };
 
-  const buttonClasses = `w-[880px] p-5 rounded-xl cursor-pointer transition-all duration-300
-    bg-gradient-to-r from-[#1c1c25] to-[#23232d] 
-    ${isExpanded ? "shadow-lg" : "shadow-md"}
-    ${className}`
-
+  const buttonClasses = `w-full p-6 rounded-xl cursor-pointer transition-all duration-300
+  bg-gradient-to-r from-[#1c1c25] to-[#23232d] 
+  ${isExpanded ? "shadow-lg" : "shadow-md"}
+  ${className}`;
+  // border-2 border-[#2a2a35] hover:border-[#0F4D71]
   return (
-    <div className="relative">
-      <BackgroundGradient
-        className={`absolute inset-0 rounded-xl transition-opacity duration-300 ${
-          isHovered ? 'opacity-100' : 'opacity-0'
-        }`}
-      />
-      <div className="relative">
+    <div>
+      {/* <div
+        className="!w-[892px] border-x-4 border-red-700 bg-red-700 h-[88px] flex items-center justify-center rounded-xl"
+        style={{ clipPath: "url(#Faq)" }}
+      > */}
+        {/* <div
+          className="!w-[892px] bg-red-700 h-[88px] flex items-center justify-center rounded-xl"
+          style={{ clipPath: "url(#Faq)" }}
+        ></div> */}
         <motion.div
           className={buttonClasses}
           onClick={handleToggle}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
           initial={false}
           animate={{
             backgroundColor: isExpanded
@@ -41,6 +37,7 @@ const ExpandableButton = ({ title, children, className = "" }) => {
           style={{
             clipPath: "url(#Faq)",
             backgroundClip: "padding-box",
+            // border:"2px solid blue",
             backgroundImage: `linear-gradient(rgba(28, 28, 37, 0.4), rgba(28, 28, 37, 0.4)), 
                         linear-gradient(to right, #2a2a35, ${
                           isExpanded ? "#0F4D71" : "#2a2a35"
@@ -48,6 +45,9 @@ const ExpandableButton = ({ title, children, className = "" }) => {
             backgroundOrigin: "border-box",
           }}
         >
+          <div>
+            <ClipPathFaq />
+          </div>
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-semibold text-gray-200 tracking-wide">
               {title}
@@ -80,11 +80,10 @@ const ExpandableButton = ({ title, children, className = "" }) => {
             )}
           </AnimatePresence>
         </motion.div>
-      </div>
+      {/* </div> */}
       <ClipPathFaq />
     </div>
-  )
-}
+  );
+};
 
-export default ExpandableButton
-
+export default ExpandableButton;

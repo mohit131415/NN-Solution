@@ -17,7 +17,7 @@ function ContactForm() {
 
   return (
     <>
-      <div
+      {/* <div
         className="visme_d"
         data-title="Simple Animated Contact Form"
         data-url="017edk00-simple-animated-contact-form"
@@ -25,7 +25,9 @@ function ContactForm() {
         data-full-page="false"
         data-min-height="500px"
         data-form-id="102257"
-      ></div>
+      ></div> */}
+
+    
     </>
   );
 }
