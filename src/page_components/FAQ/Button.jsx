@@ -11,19 +11,15 @@ const ExpandableButton = ({ title, children, className = "" }) => {
 
   const buttonClasses = `w-full p-6 rounded-xl cursor-pointer transition-all duration-300
   bg-gradient-to-r from-[#1c1c25] to-[#23232d] 
+  border-2 border-[#2a2a35] hover:border-[#0F4D71]  
   ${isExpanded ? "shadow-lg" : "shadow-md"}
   ${className}`;
-  // border-2 border-[#2a2a35] hover:border-[#0F4D71]
   return (
     <div>
       {/* <div
-        className="!w-[892px] border-x-4 border-red-700 bg-red-700 h-[88px] flex items-center justify-center rounded-xl"
+        className="border-8 border-red-700 bg-red-700 flex items-center justify-center rounded-xl"
         style={{ clipPath: "url(#Faq)" }}
       > */}
-        {/* <div
-          className="!w-[892px] bg-red-700 h-[88px] flex items-center justify-center rounded-xl"
-          style={{ clipPath: "url(#Faq)" }}
-        ></div> */}
         <motion.div
           className={buttonClasses}
           onClick={handleToggle}
